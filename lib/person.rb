@@ -1,5 +1,32 @@
-#code along here!
+require 'pry'
 
+class Person
+
+  attr_accessor :name, :happiness, :partner
+
+  def initialize(name)
+    @name = name
+    @happiness = 5
+  end
+
+  def go_on_a_date(person, match)
+    # create another instance of Person and value true or false
+    # depending if two persons are match
+    if match == false
+      self.happiness -= 1
+      person.happiness -= 1
+    elsif match == true
+      self.happiness += 1
+      person.happiness += 1
+    end
+  end
+
+  def get_married(person)
+    self.partner = person
+    person.partner = self
+  end
+
+end
 
 #############
 
@@ -16,6 +43,3 @@
 #beyonce.get_married(jayz)
 #puts "Beyonce's partner is #{beyonce.partner.name}"
 #puts "Jay-Z's partner is #{jayz.partner.name}"
-
-
-
